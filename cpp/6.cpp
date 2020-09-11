@@ -1,16 +1,36 @@
-// my solution
+// https://leetcode.com/problems/zigzag-conversion/
+
+// My solution
 // Time: O(n)
 // Space: O(n)
-// stimulate draw zigzag on a 2D array then print out the string
+// Stimulate draw zigzag on a 2D array then print out the string
 class Solution {
 public:
+    /**
+     * @brief Transform given string into ZigZag form and them output it line by line
+     * 
+     * @param s Given string
+     * @param numRows Row number for ZigZag
+     * @return string Result string
+     */
     string convert(string s, int numRows) {
+        // corner case
         if(s.size()<2 || numRows == 1) return s;
         int n = s.size();
-        int width = (n / (numRows*2-2)) *(numRows - 1);
-        int p =n%(numRows*2-2);
-        if(p > 0 && p <= numRows) ++width;
-        else if(p > numRows) width += p -  numRows + 1;
+        // for each 'V' part in ZigZag there are (numRows * 2 - 2) numbers, and represent (numRows - 1) columns
+        // for example:
+        // #     *
+        // #   # *
+        // # #   *
+        // #     *
+        // there are 4 * 2 - 2 = 6 '#' and they take 4 - 1 = 3 columns
+        int width = (n / (numRows * 2 - 2)) * (numRows - 1);  // compute width
+        // check whether there are extra columns
+        int p = n % (numRows * 2 - 2); 
+        if(p > 0 && p <= numRows) ++width;  // there is only another column which is the left column in a 'V'
+        else if(p > numRows) width += p -  numRows + 1; // there are extra columns except the left column in a 'V'
+
+        // arrange a canvas filled with #, and draw string in ZigZag pattern on it
         vector<vector<char>> canvas(numRows, vector<char>(width,'#'));
         int x = 0, y = 0;
         for(int i = 0; i < s.size(); ++i){
@@ -20,6 +40,7 @@ public:
                 canvas[x--][y++] = s[i];
             }
         }
+        // fill the original string with new order by traversing the canvas
         int i = 0;
         for(auto& row : canvas){
             for(auto& ch : row){
@@ -30,28 +51,35 @@ public:
     }
 };
 
-// same method but better approach
+// Same method but better approach
 // Time: O(n)
 // Space: O(n)
 // By iterating through the string from left to right, 
 //   we can easily determine which row in the Zig-Zag pattern that a character belongs to.
-// We can use min(numRows,len(s)) lists to represent the non-empty rows of the Zig-Zag Pattern.
 class Solution {
 public:
+    /**
+     * @brief Transform given string into ZigZag form and them output it line by line
+     * 
+     * @param s Given string
+     * @param numRows Row number for ZigZag
+     * @return string Result string
+     */
     string convert(string s, int numRows) {
-
+        // corner case
         if (numRows == 1) return s;
-
+        // use min(numRows,len(s)) lists to represent the non-empty rows of the Zig-Zag Pattern.
         vector<string> rows(min(numRows, int(s.size())));
         int curRow = 0;
-        bool goingDown = false;
-
+        bool goingDown = false;  // for recording our visit direction
+        // stimulate the read order in ZigZag pattern
         for (char c : s) {
-            rows[curRow] += c;
+            rows[curRow] += c; // write character into corresponding row
+            // when meet the top or bottom row, we should change over visit direction
             if (curRow == 0 || curRow == numRows - 1) goingDown = !goingDown;
-            curRow += goingDown ? 1 : -1;
+            curRow += goingDown ? 1 : -1;  // visite next above or below character
         }
-
+        // get result string by connecting all rows line by line
         string ret;
         for (string row : rows) ret += row;
         return ret;
@@ -69,14 +97,21 @@ public:
 // Space: O(n), O(1) if return string is not considered extra space.
 class Solution {
 public:
+    /**
+     * @brief Transform given string into ZigZag form and them output it line by line
+     * 
+     * @param s Given string
+     * @param numRows Row number for ZigZag
+     * @return string Result string
+     */
     string convert(string s, int numRows) {
 
         if (numRows == 1) return s;
 
         string ret;
         int n = s.size();
-        int cycleLen = 2 * numRows - 2;
-
+        int cycleLen = 2 * numRows - 2; // the interval between each character on original string
+        // same idea to above solution, but in current case we just visit directly
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j + i < n; j += cycleLen) {
                 ret += s[j + i];
