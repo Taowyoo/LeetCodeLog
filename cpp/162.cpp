@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/find-peak-element/
 // 162. Find Peak Element
+
 // binary search
 // Time: O(log2(n))
 // Space: O(1)

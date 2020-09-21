@@ -111,6 +111,13 @@ class Solution
     };
 
 public:
+    /**
+     * @brief get kth Smallest element in given matrix
+     * 
+     * @param matrix given matrix with every row or column sorted
+     * @param k the number of k for k-th 
+     * @return int the value of k-th element
+     */
     int kthSmallest(vector<vector<int>> &arr, int k)
     {
 
@@ -147,23 +154,26 @@ public:
     static int findKthSmallest(vector<vector<int>> &matrix, int k)
     {
         int n = matrix.size();
+        // use the smallest and biggest number as low and hight to search for a hypothetical mid value
         int start = matrix[0][0], end = matrix[n - 1][n - 1];
         while (start < end)
         {
             int mid = start + (end - start) / 2;
             // first number is the smallest and the second number is the largest
             pair<int, int> smallLargePair = {matrix[0][0], matrix[n - 1][n - 1]};
+            // after getting the number of elements that <= mid, we can determine whether we find the k-th smallest 
             int count = countLessEqual(matrix, mid, smallLargePair);
+            // if there is k number before mid, the the biggest number we meet thorughout the counting process is answer
             if (count == k)
             {
                 return smallLargePair.first;
             }
-
+            // if less than k, we need find number a bigger 'mid' -> get more number of smaller numbers
             if (count < k)
             {
                 start = smallLargePair.second; // search higher
             }
-            else
+            else  // if bigger than k, we need find number a smaller 'mid' -> get less number of smaller numbers
             {
                 end = smallLargePair.first; // search lower
             }
@@ -173,6 +183,14 @@ public:
     }
 
 private:
+    /**
+     * @brief find number of elements in the matrix that is smaller or equal to given mid
+     * also record the biggest and smallest number we meet throughout the checking process
+     * @param matrix the matrix where we find
+     * @param mid mid value
+     * @param smallLargePair value pair storing the biggest and smallest value 
+     * @return int number of elements in the matrix that is smaller or equal to given mid
+     */
     static int countLessEqual(vector<vector<int>> &matrix, int mid, pair<int, int> &smallLargePair)
     {
         int count = 0;
@@ -198,5 +216,3 @@ private:
         return count;
     }
 };
-
-// 

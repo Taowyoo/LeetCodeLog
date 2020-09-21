@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 // 153. Find Minimum in Rotated Sorted Array
+
 // Binary search
 // Description: by comparing the mid and last to find the real beginning(min)
 // Time: O(log(n))
