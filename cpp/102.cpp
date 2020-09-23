@@ -1,5 +1,8 @@
+// https://leetcode.com/problems/binary-tree-level-order-traversal/
+// 102. Binary Tree Level Order Traversal
+
 // my solution
-// use one queue and one vector. 
+// use one queue and one vector.
 // Traversal each level at one turn and save each level nodes to vector then put whole vector into the result vector
 /**
  * Definition for a binary tree node.
@@ -14,6 +17,12 @@
  */
 class Solution {
 public:
+    /**
+     * @brief Get nodes in levelOrder of a Tree.
+     * 
+     * @param root Root node pointer
+     * @return vector<vector<int>> Lists of nodes of each level
+     */
     vector<vector<int>> levelOrder(TreeNode* root) {
         vector<vector<int>> res;
         if(!root) return res;
@@ -40,12 +49,24 @@ public:
 // use a variable to record depth
 class Solution {
 public:
+    /**
+     * @brief Get nodes in levelOrder of a Tree.
+     * 
+     * @param root Root node pointer
+     * @return vector<vector<int>> Lists of nodes of each level
+     */
     vector<vector<int>> levelOrder(TreeNode *root) {
         buildVector(root, 0);
         return ret;
     }
 private:
     vector<vector<int>> ret;
+    /**
+     * @brief Recursive function to traverse nodes in preorder
+     * use a variable depth to record current depth
+     * @param root Current Node pointer
+     * @param depth Curent Node depth
+     */
     void buildVector(TreeNode *root, int depth)
     {
         if(root == NULL) return;

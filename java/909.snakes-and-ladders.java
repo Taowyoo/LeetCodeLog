@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+// https://leetcode.com/problems/snakes-and-ladders/
+// 909. Snakes and Ladders
+
 /*
  * @lc app=leetcode id=909 lang=java
  *
@@ -8,7 +11,13 @@ import java.util.LinkedList;
  */
 
 // @lc code=start
+// my solution
+// use bfs and a pre-process Look-up array
 class Solution {
+    /**
+     * Use bfs to move forward and get smallest number of moves
+     * @return int Smallest number of moves
+     */
     private int bfs(){
         LinkedList<Integer> queue = new LinkedList<>();
         Set<Integer> seen = new HashSet<>();

@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/maximum-depth-of-binary-tree/
+// 104. Maximum Depth of Binary Tree
+
 // recursion solution
 // using DFS
 /**
@@ -13,6 +16,12 @@
  */
 class Solution {
 public:
+/**
+ * @brief Recursively get max depth.
+ * 
+ * @param root Current Node
+ * @return int The depth of tree whose root is current Node
+ */
     int maxDepth(TreeNode* root) {
         return root == nullptr ? 0 : max(maxDepth(root -> left), maxDepth(root -> right)) + 1;
     }
@@ -21,6 +30,12 @@ public:
 // BFS
 class Solution {
 public:
+    /**
+     * @brief BFS to get max depth
+     * 
+     * @param root Current Node
+     * @return int The depth of tree whose root is current Node
+     */
     int maxDepth(TreeNode *root)
     {
         if(root == NULL)
