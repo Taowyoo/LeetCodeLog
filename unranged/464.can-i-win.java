@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
  * @lc app=leetcode id=464 lang=java
  *
@@ -71,11 +73,11 @@
 public class Solution {
     public boolean canIWin(int maxChoosableInteger, int desiredTotal) {
         if (desiredTotal<=0) return true;
-        if (maxChoosableInteger*(maxChoosableInteger+1)/2<desiredTotal) return false;
+        if (maxChoosableInteger*(maxChoosableInteger+1)/2< desiredTotal) return false;
         return canIWin(desiredTotal, new int[maxChoosableInteger], new HashMap<>());
     }
-    private boolean canIWin(int total, int[] state, HashMap<String, Boolean> hashMap) {
-        String curr=Arrays.toString(state);
+    private boolean canIWin(int total, int[] state, HashMap<Integer, Boolean> hashMap) {
+        int curr = Arrays.hashCode(state);
         if (hashMap.containsKey(curr)) return hashMap.get(curr);
         for (int i=0;i<state.length;i++) {
             if (state[i]==0) {
