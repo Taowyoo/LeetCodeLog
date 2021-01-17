@@ -1,4 +1,16 @@
-class Solution:
+'''
+File: 1.py
+File Created: 2021-01-04 20:01:58 -08:00
+Author: Taowyoo (caoyxsh@outlook.com)
+Brief: https://leetcode.com/problems/two-sum/
+-----
+Last Modified: 2021-01-04 21:03:19 -08:00
+Modified By: Taowyoo (caoyxsh@outlook.com>)
+-----
+Copyright 2020 - 2021
+'''
+
+class Solution1:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         """One pass using HashMap
 
@@ -19,7 +31,7 @@ class Solution:
 
 
 
-class Solution:
+class Solution2:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
             """Two pass using HashMap
 
