@@ -1,4 +1,12 @@
-// https://leetcode.com/problems/zigzag-conversion/
+/*
+ * File: 6.cpp
+ * Created Date: 2020-07-29
+ * Author: Nick Cao(caoyxsh@outlook.com)
+ * Brief: https://leetcode.com/problems/zigzag-conversion/
+ * -----
+ * Last Modified: 2021-01-18T13:21:48-08:00
+ * Modified By: Nick Cao(caoyxsh@outlook.com)
+ */
 
 // My solution
 // Time: O(n)
