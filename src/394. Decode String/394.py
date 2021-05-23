@@ -1,10 +1,13 @@
-#
-# @lc app=leetcode id=394 lang=python3
-#
-# [394] Decode String
-#
+'''
+File: 394.py
+Created Date: 2021-03-08
+Author: Nick Cao(caoyxsh@outlook.com)
+Brief: https://leetcode.com/problems/decode-string/
+-----
+Last Modified: 2021-03-08T10:09:03-08:00
+Modified By: Nick Cao(caoyxsh@outlook.com)
+'''
 
-# @lc code=start
 class Solution:
     def decodeString(self, s: str) -> str:
         """
@@ -35,5 +38,3 @@ class Solution:
                 current_string += char
         
         return current_string
-# @lc code=end
-
