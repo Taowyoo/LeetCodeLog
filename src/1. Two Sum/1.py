@@ -21,6 +21,7 @@ class Solution1:
         Returns:
             List[int]: the index of two result nums
         """
+        # Use a dict to record visited numbers
         d = {}
         for i, n in enumerate(nums):
             m = target - n

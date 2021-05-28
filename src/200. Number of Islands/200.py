@@ -1,23 +1,22 @@
 '''
-File: 200.py
-Created Date: 2021-03-08
-Author: Nick Cao(caoyxsh@outlook.com)
-Brief: https://leetcode.com/problems/number-of-islands/
------
-Last Modified: 2021-03-08T10:08:44-08:00
-Modified By: Nick Cao(caoyxsh@outlook.com)
+Author: Nick Cao
+Date: 2021-03-25 12:42:38
+LastEditTime: 2021-05-28 16:41:53
+LastEditors: Nick Cao
+Description: 
+FilePath: \LeetCodeLog\src\200. Number of Islands\200.py
 '''
 
 
 class Solution1:
     def numIslands(self, grid: List[List[str]]) -> int:
-		"""DFS Solution
+        """DFS Solution
         Args:
                 grid (List[List[str]]): Island grid
         Returns:
                 int: Island number
         """
-		dx = [1, -1, 0, 0]
+        dx = [1, -1, 0, 0]
         dy = [0, 0, 1, -1]
         if not grid:
             return 0
