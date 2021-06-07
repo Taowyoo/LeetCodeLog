@@ -32,7 +32,7 @@ def get_solution_data(solution_path: str) -> list[list[str]]:
         for entry in it:
             if entry.is_dir():
                 # get id and name of the problem
-                names = entry.name.split(". ")
+                names = entry.name.split(".")
                 row = [names[0],names[1]]
                 
                 # check solutions
@@ -72,7 +72,6 @@ def update_readme(data: list[list[str]]):
     print("Updated {}".format("README.md"))
 
 if __name__ == "__main__":
-    # cur_script_path = os.path.dirname(os.path.realpath(__file__))
     data = get_solution_data(solutions_path)
     save_to_csv(csv_path,data)
     update_readme(data)
