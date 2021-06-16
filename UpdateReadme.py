@@ -1,11 +1,11 @@
-"""
+'''
 Author: Nick Cao
 Date: 2021-06-06 14:30:52
-LastEditTime: 2021-06-06 16:11:54
+LastEditTime: 2021-06-16 16:32:33
 LastEditors: Nick Cao
 Description: 
-FilePath: \\LeetCodeLog\\UpdateReadme.py
-"""
+FilePath: /LeetCodeLog/UpdateReadme.py
+'''
 
 import csv
 import os
@@ -63,7 +63,7 @@ def update_readme(data: list[list[str]]):
         for i in range(-len(exts),0):
             if row[i]!='' :
                 # row[i] = "[Done]({})".format(row[i])
-                row[i] = mdFile.new_inline_link(link=row[i], text='Done')
+                row[i] = mdFile.new_inline_link(link=row[i], text=exts[i])
                 pass
         list_of_strings.extend(row)
 
