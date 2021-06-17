@@ -30,15 +30,17 @@ This is my record of LeetCode solutions.
 |189|RotateArray||||[py](src\189.RotateArray\189.py)||
 |198|HouseRobber||[java](src\198.HouseRobber\198.java)||||
 |2|AddTwoNumbers|[cpp](src\2.AddTwoNumbers\2.cpp)|[java](src\2.AddTwoNumbers\2.java)||[py](src\2.AddTwoNumbers\2.py)||
+|20| Valid Parentheses|[cpp](src\20. Valid Parentheses\20.cpp)||[js](src\20. Valid Parentheses\20.js)|[py](src\20. Valid Parentheses\20.py)||
 |200|NumberofIslands|[cpp](src\200.NumberofIslands\200.cpp)||[js](src\200.NumberofIslands\200.js)|[py](src\200.NumberofIslands\200.py)|[rs](src\200.NumberofIslands\200.rs)|
 |210|CourseScheduleII||||[py](src\210.CourseScheduleII\210.py)||
 |211|DesignAddandSearchWordsDataStructure||||[py](src\211.DesignAddandSearchWordsDataStructure\211.py)||
-|3|LongestSubstringWithoutRepeatingCharacters||||||
+|3|LongestSubstringWithoutRepeatingCharacters|[cpp](src\3.LongestSubstringWithoutRepeatingCharacters\3.cpp)||[js](src\3.LongestSubstringWithoutRepeatingCharacters\3.js)|[py](src\3.LongestSubstringWithoutRepeatingCharacters\3.py)||
 |307|RangeSumQuery-Mutable||||[py](src\307.RangeSumQuery-Mutable\307.py)||
 |310|MinimumHeightTrees|[cpp](src\310.MinimumHeightTrees\310.cpp)|||||
 |322|CoinChange||[java](src\322.CoinChange\322.java)||||
 |332|ReconstructItinerary||[java](src\332.ReconstructItinerary\332.java)||||
 |394|DecodeString|[cpp](src\394.DecodeString\394.cpp)|||[py](src\394.DecodeString\394.py)||
+|4|Median of Two Sorted Arrays|[cpp](src\4.Median of Two Sorted Arrays\4.cpp)||[js](src\4.Median of Two Sorted Arrays\4.js)|[py](src\4.Median of Two Sorted Arrays\4.py)||
 |417|PacificAtlanticWaterFlow|[cpp](src\417.PacificAtlanticWaterFlow\417.cpp)|||||
 |464|CanIWin||[java](src\464.CanIWin\464.java)||||
 |5|LongestPalindromicSubstring|[cpp](src\5.LongestPalindromicSubstring\5.cpp)|||||
