@@ -1,7 +1,7 @@
 '''
 Author: Nick Cao
 Date: 2021-06-06 14:30:52
-LastEditTime: 2021-06-16 16:32:33
+LastEditTime: 2021-06-18 13:50:07
 LastEditors: Nick Cao
 Description: 
 FilePath: /LeetCodeLog/UpdateReadme.py
@@ -26,7 +26,8 @@ def save_to_csv(path: str, data: list[list[str]]):
     print("Updated {}".format(path))
     
 def get_solution_data(solution_path: str) -> list[list[str]]:
-    data = [cols_names]
+    head = [cols_names]
+    data = []
     # iterate each problem dir
     with os.scandir(solution_path) as it:
         for entry in it:
@@ -47,7 +48,8 @@ def get_solution_data(solution_path: str) -> list[list[str]]:
                         pass
                 row += finished
                 data.append(row)
-    return data
+    data.sort(key=lambda l : int(l[0]))
+    return head + data
 
 def update_readme(data: list[list[str]]):
     print("Updating {}".format("README.md"))
