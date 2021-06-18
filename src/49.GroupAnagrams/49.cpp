@@ -1,3 +1,12 @@
+/*
+ * @Author: Nick Cao
+ * @Date: 2021-03-25 12:42:04
+ * @LastEditTime: 2021-06-18 13:12:27
+ * @LastEditors: Nick Cao
+ * @Description: https://leetcode.com/problems/group-anagrams/
+ * @FilePath: /LeetCodeLog/src/49.GroupAnagrams/49.cpp
+ */
+
 // my solution
 // generate pattern array for each string and put them into different group according by comparing the pattern
 // Time: O(K^2N^2),  where N is the length of strs, and K is the maximum length of a string in strs.
